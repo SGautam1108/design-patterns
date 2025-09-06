@@ -22,7 +22,9 @@ public class WeatherStation implements Subject{
     @Override
     public boolean registerObserver(Observer o) {
         try{
-            observerList.add(o);
+            if(!observerList.contains(o)) {
+                observerList.add(o);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return false;
